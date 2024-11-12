@@ -1,0 +1,143 @@
+
+.novoAgendamento-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.novoAgendamento-lado-esquerdo {
+    
+    flex: 1;
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), 
+        linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0.5, 1)),
+        url('./../../assets/images/NovoAgendamento_esquerda_img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.Logo2 {
+    background-image: url('../../assets/images/Home_Logo_Barbearia_1.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    width: 50vw;
+    height: 40vh;
+    top: 60%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+}
+
+.novoAgendamento-lado-direito {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 15px;
+    color: white;
+    flex: 1;
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0.5, 0.7)),
+        linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        url('./../../assets/images/NovoAgendamento_direita_img.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 25px;
+}
+
+.novoAgendamento-lado-direito  h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 38px;
+    color: white;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.form-group label {
+    font-size: 15px;
+    color: white;
+}
+
+.form-control {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    border: none;
+    border-radius: 22px;
+    margin-bottom: 5px;
+}
+
+.custom-button2 {
+    width: 100%;
+    background-color: orange;
+    border: none;
+    margin-top: 8px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.custom-button:hover {
+    background-color: darkorange;
+}
+
+@media (max-width: 1024px) {
+    .novoAgendamento-lado-esquerdo, .novoAgendamento-lado-direito {
+        height: 100vh;
+    }
+
+    .lado-direito h1 {
+        font-size: 28px;
+    }
+
+    .form-group label, .form-control, .custom-button2 {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .agendamento-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .novoAgendamento-lado-esquerdo, .novoAgendamento-lado-direito{
+        width: 100%;
+        height: 100vh;
+        padding: 15px;
+    }
+
+    .lado-direito h1 {
+        font-size: 24px;
+    }
+
+    .custom-button2 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .novoAgendamento-lado-esquerdo, .novoAgendamento-lado-direito  {
+        height: auto;
+        justify-content: center;
+        padding: 10px;
+    }
+
+    .novoAgendamento-lado-direito  h1 {
+        font-size: 20px;
+    }
+}

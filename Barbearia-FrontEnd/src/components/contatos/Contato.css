@@ -1,0 +1,196 @@
+.contato-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.left-section {
+    flex: 1;
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)), 
+        linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)),
+        linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), 
+    url('../../assets/images/Contato_Background1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-container {
+    background-image: url('../../assets/images/Home_cbs_logo_1.png');
+    text-align: center;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    top: 55%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.logo {
+    width: 50vw;
+    height: 50vh;
+}
+
+.right-section {
+    flex: 1;
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)), 
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),  
+        linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+    url('../../assets/images/Contato_Background2.jpg'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    padding: 20px;
+    flex-direction: column;
+}
+
+.contato-content {
+    max-width: 600px;
+    text-align: center;
+    padding: 20px;
+    border-radius: 8px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 35px;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+.contato-content h1 {
+    color: #ff8c00;
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.contato-content p {
+    font-size: 23px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.contato-links a {
+    font-size: 25px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    margin-left: 34%;
+}
+
+.contato-links a:hover {
+    color: #ff8c00;
+}
+
+.contato-links i {
+    margin-right: 15px;
+}
+
+.localizacao {
+    margin-top: 30px;
+}
+
+.localizacao h2 {
+    color: #ff8c00;
+    font-size: 40px;
+}
+
+.localizacao-info {
+    display: flex;
+    align-items: center;
+}
+
+.localizacao-info i {
+    margin-right: 30px;
+    margin-bottom: 7%;
+}
+
+@media (max-width: 768px) {
+    .contato-container {
+        flex-direction: column;
+    }
+
+    .left-section, .right-section {
+        width: 100%;
+        height: auto;
+    }
+
+    .logo-container {
+        width: 60vw;
+        height: 30vh;
+        margin-top: -300px;
+        margin-left: 23%;
+    }
+
+    .contato-content {
+        width: 90%;
+        font-size: 0.9rem;
+    }
+
+    .contato-content h1 {
+        font-size: 2rem;
+    }
+
+    .contato-links a {
+        
+        margin-left: 40%;
+    }
+
+    .localizacao-info {
+        font-size: 0.9rem;
+        margin-left: 17%;
+    }
+}
+
+@media (max-width: 480px) {
+  
+    .contato-content h1 {
+        font-size: 3rem;
+    }
+
+    .localizacao h2 {
+        font-size: 1.5rem;
+    }
+    
+    .contato-content h1 {
+        font-size: 1.5rem;
+    }
+
+    .contato-content p{
+        font-size: 1rem;
+    }
+
+    .contato-links a{
+        margin-left: 30%;
+        font-size: 1rem;
+    }
+    
+    .localizacao-info {
+        font-size: 1rem;
+        margin-left: -30px;
+    }
+
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY();
+    }
+}

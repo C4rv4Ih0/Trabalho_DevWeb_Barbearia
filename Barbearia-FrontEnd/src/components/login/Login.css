@@ -1,0 +1,148 @@
+.login-container {
+  background-image: 
+      linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 1)), 
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+      linear-gradient(to left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1)),
+      linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)),
+  url('../../assets/images/Login_background.jpg'); 
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+}
+.logo_CBS{
+  background-image: url('../../assets/images/Home_Logo_Barbearia_1.png');
+  background-size: contain;
+  background-position: right center;
+  background-repeat: no-repeat;
+  width: 600px;
+  height: 500px;
+  margin-left: 19%;
+}
+  
+.login-card {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 35px;
+  background-color: #1b1b1b; 
+  color: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 40px;
+  width: 100%;
+  max-width: 350px;
+  margin-left: 13%;
+}
+  
+.form-control {
+  background-color: #444;
+  border: 1px solid #555;
+  color: #fff;
+}
+  
+.form-control:focus {
+  background-color: #555;
+  color: #fff;
+  border-color: #ff8c00;
+  box-shadow: none;
+}
+  
+.text-center {
+  color: #ff8c00;
+  margin-bottom: 20px;
+}
+
+.btn-primary {
+  background-color: #ff8c00;
+  border-color: #ff8c00;
+}
+  
+.btn-primary:hover {
+  background-color: #e07b00;
+  border-color: #e07b00;
+}
+
+::placeholder {
+  color: gray;
+  opacity: 1;
+}
+  
+.form-control::-webkit-input-placeholder {
+  color: gray; 
+}
+  
+.form-control::-moz-placeholder {
+  color: gray;
+}
+  
+.form-control:-ms-input-placeholder {
+  color: gray;
+}
+  
+.form-control::-ms-input-placeholder {
+  color: gray;
+}
+  
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo_CBS {
+    width: 80%; 
+    margin-left: 0;
+  }
+
+  .login-card {
+    width: 90%;
+    padding: 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    width: 95%;
+    padding: 20px;
+  }
+    
+  .logo_CBS {
+    width: 70%;
+    height: auto;
+  }
+
+  .text-center {
+    font-size: 18px;
+  }
+
+  .btn-primary {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo_CBS {
+    width: 600px;
+    height: 500px;
+  }
+  .login-card {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 1366px) {
+  .logo_CBS {
+    width: 600px;
+    height: 500px;
+    margin-left: 7%;
+  }
+
+ .login-card {
+    max-width: 350px;
+    font-size: 20px;
+  }
+}
+  

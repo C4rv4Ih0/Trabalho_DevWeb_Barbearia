@@ -1,0 +1,274 @@
+.agendamento-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.lado-esquerdo {
+    flex: 1;
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0.5, 1)),
+        url('./../../assets/images/Agendamentos_esquerda_img.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.Logo {
+    background-image: url('../../assets/images/Home_cbs_logo_1.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    top: 55%;
+    left: 25%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
+.lado-direito {
+    font-family: 'Bebas Neue', sans-serif;
+    color: white;
+    flex: 1;
+    background-image: 
+        linear-gradient(to top, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0)),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        linear-gradient(to left, rgba(0, 0, 0, 0.3), rgba(0, 0, 0.5, 0.7)),
+        linear-gradient(to right, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0)),
+        url('./../../assets/images/Agendamentos_direita_img.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+
+.info-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1px; 
+    margin-bottom: 1px;
+
+}
+
+.info-section .text {
+    font-size: 55px; 
+    color: orange;
+    display: flex;
+    padding-left: 43%;
+    height: 100%;
+}
+
+.text2, .text3 {
+    font-size: 30px; 
+    color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+}
+
+.info-image {
+    width: 230px;
+    height: 230px;
+    background-size: cover;
+    background-position: center;
+    border: 4px solid white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 2s ease-in-out forwards;
+}
+
+.info-image.barba {
+    background-image: url('@assets/images/Agendamentos_barba.jpg');
+}
+
+.info-image.corte {
+    background-image: url('@assets/images/Agendamentos_cabelo.jpg');
+}
+
+.info-text {
+    font-size: 20px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    padding-left: 10%;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px; 
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 35px;
+    margin-left: 18%;
+}
+
+.action-buttons .btn {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+.action-buttons .btn-primary {
+    background-color: orange;
+    border: none;
+}
+
+.action-buttons .btn-primary:hover {
+    background-color:darkorange;
+}
+
+@media (max-width: 1366px) {
+    .agendamento-container {
+        height: 95vh; 
+    }
+    .Logo {
+        width: 60vw;
+        height: 50vh;
+        top: 50%;
+    }
+    .info-section .text {
+        font-size: 32px;
+        padding-left: 45%;
+    }
+    .info-text {
+        font-size: 15px;
+    }
+    .info-image {
+        width: 140px;
+        height: 140px;
+    }
+
+    .info-item {
+        margin-bottom: 1px;
+    }
+
+    .action-buttons {
+        margin-top: 1px;
+        margin-bottom: 60px;
+        margin-left: 15%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .agendamento-container {
+        flex-direction: column;
+        height: auto;
+    }
+    .lado-esquerdo, .lado-direito {
+        width: 100%;
+        height: 50vh;
+        padding: 15px;
+    }
+    .Logo {
+        width: 50vw;
+        height: 30vh;
+        top: 50%;
+    }
+    .action-buttons .btn {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .agendamento-container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .lado-esquerdo, .lado-direito {
+        width: 100%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .Logo {
+        width: 70vw;
+        height: 30vh;
+        top: 45%;
+    }
+
+    .info-section .text {
+        font-size: 28px;
+        padding-left: 10%;
+    }
+
+    .info-image {
+        width: 120px;
+        height: 120px;
+    }
+
+    .action-buttons .btn {
+        font-size: 12px;
+        padding: 8px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .lado-esquerdo, .lado-direito {
+        height: auto;
+        padding: 5px;
+    }
+
+    .Logo {
+        width: 80vw;
+        height: 25vh;
+        top: 40%;
+    }
+
+    .info-section .text {
+        font-size: 22px;
+        padding-left: 5%;
+    }
+
+    .text2, .text3 {
+        font-size: 16px;
+    }
+
+    .info-image {
+        width: 100px;
+        height: 100px;
+    }
+
+    .action-buttons {
+        padding-left: 0;
+        justify-content: center;
+    }
+
+    .action-buttons .btn {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
