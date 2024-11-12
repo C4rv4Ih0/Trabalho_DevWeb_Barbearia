@@ -30,6 +30,11 @@ Este projeto é um sistema completo de agendamento para uma barbearia, conectand
 </div>
 
 <div align="center">
+    <h3>Página que cria Agendamentos</h3>
+    <img src="./Barbearia-FrontEnd/src/assets/readme images/site_novo_agendamento.png" alt="Agendamentos" width="600">
+</div>
+
+<div align="center">
     <h3>Página de Contato</h3>
     <img src="./Barbearia-FrontEnd/src/assets/readme images/site_contato.png" alt="Contato" width="600">
 </div>
