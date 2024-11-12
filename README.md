@@ -1,4 +1,4 @@
-# ✂️ Sistema de uma Barbearia
+# ✂️ Sistema de Barbearia
 
 ## 🛠️ Criadores:
 - **Cleberson de Carvalho**
