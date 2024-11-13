@@ -8,7 +8,7 @@
 
 ## 📖 Descrição
 
-Este projeto é um sistema completo de agendamento para uma barbearia, conectando uma API desenvolvida em Node.js com um banco de dados PostgreSQL e um front-end em React com estilização em Bootstrap. Com ele, clientes podem agendar cortes de cabelo de forma prática, e administradores têm acesso a uma área restrita para gerenciar esses agendamentos, acessível através de um login.
+Este projeto é um sistema completo de agendamento para uma barbearia, conectando uma API desenvolvida em Node.js com um banco de dados PostgreSQL e um front-end em React com estilização em Bootstrap. Com ele, clientes podem agendar cortes de cabelo de forma prática, e administradores têm acesso a uma área restrita para gerenciar esses agendamentos, acessível através de um login, sendo possível a edição ou exclusão dos mesmos.
 
 ---
 
