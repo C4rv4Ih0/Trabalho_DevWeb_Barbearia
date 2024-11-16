@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./inicio.css";
+import "./Inicio.css";
 
 
 export default class Inicio extends Component {

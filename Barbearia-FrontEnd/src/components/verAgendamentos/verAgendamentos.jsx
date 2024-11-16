@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react';
 import "bootstrap/dist/css/bootstrap.min.css";
-import './VerAgendamentos.css';
+import './verAgendamentos.css';
 import AgendamentoDataService from '../../services/AgendamentoDataService.js';
-import NavBarAdm from '../navbarAdm/navbarAdm.jsx';
+import NavBarAdm from '../navbarAdm/NavBarAdm.jsx';
 
 export default class VerAgendamentos extends Component {
   constructor(props) {

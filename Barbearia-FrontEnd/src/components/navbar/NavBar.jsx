@@ -3,7 +3,7 @@ import React, { useState } from "react"; // Importando useState
 import { NavLink } from "react-router-dom"; // Importa NavLink
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "@assets/images/Home_cbs_logo_1.png"; 
-import "./Navbar.css";
+import "./NavBar.css";
 
 export default function NavBar() {
     const [isOpen, setIsOpen] = useState(false); // Estado para controlar a abertura do menu
