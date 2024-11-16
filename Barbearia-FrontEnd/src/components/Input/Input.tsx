@@ -1,7 +1,6 @@
 import React, { ChangeEvent } from "react";
 
 interface InputProperties {
-  label?: string;
   type: string;
   id: string;
   placeholder: string;
@@ -15,57 +14,24 @@ interface InputProperties {
   initialLabel: string;
 }
 
-export default function Input<T>({
-  label,
+export default function Input({
   type,
   id,
   placeholder,
   required,
   value,
   onChange,
-  options,
-  optionFormatter,
-  shouldRenderInitialOption,
-  initialValue,
-  initialLabel,
 }: InputProperties) {
   return (
-    <div className="form-group">
-      <label htmlFor={id}>{label}</label>
-      {options ? (
-        <select
-          id={id}
-          name={id}
-          className="form-control"
-          value={value}
-          onChange={onChange}
-          required={required}
-        >
-          {shouldRenderInitialOption ? (
-            <option value={initialValue}>{initialLabel}</option>
-          ) : (
-            <option value="" disabled>
-              {placeholder}
-            </option>
-          )}
-          {options?.map((option) => (
-            <option key={option.id} value={option.id}>
-              {optionFormatter(option)}
-            </option>
-          ))}
-        </select>
-      ) : (
-        <input
-          type={type}
-          id={id}
-          name={id}
-          className="form-control"
-          placeholder={placeholder}
-          value={value}
-          onChange={onChange}
-          required={required}
-        />
-      )}
-    </div>
+    <input
+      id={id}
+      type={type}
+      name={id}
+      className="form-control"
+      value={value}
+      onChange={onChange}
+      required={required}
+      placeholder={placeholder}
+    />
   );
 }

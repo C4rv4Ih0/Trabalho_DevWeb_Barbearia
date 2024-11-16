@@ -1,12 +1,19 @@
-// eslint-disable-next-line no-unused-vars
-import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./NovoAgendamento.css";
+import { Component } from "react";
 import AgendamentoDataService from "../../services/AgendamentoDataService";
 import FuncionarioDataService from "../../services/FuncionarioDataService";
-import TipoDeCorteDataService from "../../services/TipoDeCorteDataService";
 import HorarioDataService from "../../services/HorarioDataService";
-import Input from "../Input/Input";
+import TipoDeCorteDataService from "../../services/TipoDeCorteDataService";
+// import GenericInput from "../GenericInput/GenericInput";
+import "./NovoAgendamento.css";
+import {
+  InputRoot,
+  Input,
+  DefaultOption,
+  Label,
+  Option,
+  Select,
+} from "../Input";
 
 // Builder para o estado inicial do componente
 class StateBuilder {
@@ -289,7 +296,18 @@ export default class Agendamentos extends Component {
           <div className="form-container">
             <h1>Agendamentos</h1>
             <form onSubmit={this.saveAgendamento}>
-              <Input
+              <InputRoot>
+                <Label htmlFor="name" label="Nome" />
+                <Input
+                  type="text"
+                  id="name"
+                  placeholder="Digite o seu nome"
+                  value={this.state.nome}
+                  onChange={this.onChangeNome}
+                  required
+                />
+              </InputRoot>
+              {/* <GenericInput
                 label="Nome"
                 type="text"
                 id="name"
@@ -297,8 +315,20 @@ export default class Agendamentos extends Component {
                 value={this.state.nome}
                 onChange={this.onChangeNome}
                 required
-              />
-              <Input
+              /> */}
+
+              <InputRoot>
+                <Label htmlFor="phone" label="Telefone" />
+                <Input
+                  type="tel"
+                  id="phone"
+                  placeholder="Digite o seu telefone"
+                  value={this.state.telefone}
+                  onChange={this.onChangeTelefone}
+                  required
+                />
+              </InputRoot>
+              {/* <GenericInput
                 label="Telefone"
                 type="tel"
                 id="phone"
@@ -306,8 +336,29 @@ export default class Agendamentos extends Component {
                 value={this.state.telefone}
                 onChange={this.onChangeTelefone}
                 required
-              />
-              <Input
+              /> */}
+
+              <InputRoot>
+                <Label htmlFor="haircut" label="Corte" />
+                <Select
+                  id="haircut"
+                  value={this.state.tipoDeCorteId}
+                  onChange={this.onChangeTipoDeCorteId}
+                  required
+                >
+                  <DefaultOption label="Selecione o tipo de corte" />
+                  {tipoDeCortes.map((corte) => (
+                    <Option
+                      key={corte.id}
+                      value={corte.id}
+                      label={`${corte.nome} - R$${parseFloat(
+                        corte.preco
+                      ).toFixed(2)}`}
+                    />
+                  ))}
+                </Select>
+              </InputRoot>
+              {/* <GenericInput
                 label="Corte"
                 id="haircut"
                 placeholder="Digite o tipo de corte"
@@ -318,8 +369,28 @@ export default class Agendamentos extends Component {
                 optionFormatter={(corte) =>
                   `${corte.nome} - R$${parseFloat(corte.preco).toFixed(2)}`
                 }
-              />
-              <Input
+              /> */}
+
+              <InputRoot>
+                <Label htmlFor="barber" label="Barbeiro" />
+                <Select
+                  id="barber"
+                  placeholder="Selecione o barbeiro"
+                  value={this.state.funcionarioId}
+                  onChange={this.onChangeFuncionarioId}
+                  required
+                >
+                  <DefaultOption label="Selecione o barbeiro" />
+                  {funcionarios.map((funcionario) => (
+                    <Option
+                      key={funcionario.id}
+                      value={funcionario.id}
+                      label={funcionario.nome}
+                    />
+                  ))}
+                </Select>
+              </InputRoot>
+              {/* <GenericInput
                 label="Barbeiro"
                 id="barber"
                 placeholder="Selecione o barbeiro"
@@ -328,16 +399,54 @@ export default class Agendamentos extends Component {
                 required
                 options={funcionarios}
                 optionFormatter={(funcionario) => funcionario.nome}
-              />
-              <Input
+              /> */}
+
+              <InputRoot>
+                <Label htmlFor="date" label="Data" />
+                <Input
+                  type="date"
+                  id="date"
+                  value={this.state.data}
+                  onChange={this.onChangeData}
+                  required
+                />
+              </InputRoot>
+              {/* <GenericInput
                 label="Data"
                 type="date"
                 id="date"
                 value={this.state.data}
                 onChange={this.onChangeData}
                 required
-              />
-              <Input
+              /> */}
+
+              <InputRoot>
+                <Label htmlFor="time" label="Horário" />
+                <Select
+                  id="time"
+                  value={this.state.horaId}
+                  onChange={this.onChangeHoraId}
+                  required
+                >
+                  {this.state.horaIdAnterior ? (
+                    <DefaultOption
+                      value={this.state.horaId}
+                      label={this.state.hora.slice(0, 5)}
+                      disabled={false}
+                    />
+                  ) : (
+                    <DefaultOption label="Selecione o horário" />
+                  )}
+                  {this.state.horarios.map((horario) => (
+                    <Option
+                      key={horario.id}
+                      value={horario.id}
+                      label={horario.hora.slice(0, 5)}
+                    />
+                  ))}
+                </Select>
+              </InputRoot>
+              {/* <GenericInput
                 label="Horário"
                 id="time"
                 value={this.state.horaId}
@@ -348,7 +457,8 @@ export default class Agendamentos extends Component {
                 shouldRenderInitialOption={this.state.horaIdAnterior}
                 initialValue={this.state.horaId}
                 initialLabel={this.state.hora.slice(0, 5)}
-              />
+              /> */}
+
               <div className="text-right">
                 <button
                   type="submit"
