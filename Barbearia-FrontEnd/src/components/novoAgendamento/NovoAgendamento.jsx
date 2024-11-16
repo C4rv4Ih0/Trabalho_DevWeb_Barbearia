@@ -4,6 +4,7 @@ import AgendamentoDataService from "../../services/AgendamentoDataService";
 import FuncionarioDataService from "../../services/FuncionarioDataService";
 import HorarioDataService from "../../services/HorarioDataService";
 import TipoDeCorteDataService from "../../services/TipoDeCorteDataService";
+import { FuncionarioIterator, TipoDeCorteIterator, HorarioIterator } from "../../utils/Iterators";
 // import GenericInput from "../GenericInput/GenericInput";
 import "./NovoAgendamento.css";
 import {
@@ -286,7 +287,9 @@ export default class Agendamentos extends Component {
   }
 
   render() {
-    const { funcionarios, tipoDeCortes } = this.state;
+    const funcionarioIterator = new FuncionarioIterator(this.state.funcionarios);
+    const tipoDeCorteIterator = new TipoDeCorteIterator(this.state.tipoDeCortes);
+    const horarioIterator = new HorarioIterator(this.state.horarios);
 
     return (
       <div className="novoAgendamento-container">
@@ -347,15 +350,14 @@ export default class Agendamentos extends Component {
                   required
                 >
                   <DefaultOption label="Selecione o tipo de corte" />
-                  {tipoDeCortes.map((corte) => (
-                    <Option
-                      key={corte.id}
-                      value={corte.id}
-                      label={`${corte.nome} - R$${parseFloat(
-                        corte.preco
-                      ).toFixed(2)}`}
-                    />
-                  ))}
+                    {tipoDeCorteIterator.hasNext() ? (
+                    [...Array(tipoDeCorteIterator.tipoDeCortes.length)].map(() => {
+                      const corte = tipoDeCorteIterator.next();
+                      return (
+                        <Option key={corte.id} value={corte.id} label={`${corte.nome} - R$${parseFloat(corte.preco).toFixed(2)}`}/>
+                      );
+                    })
+                  ) : null}
                 </Select>
               </InputRoot>
               {/* <GenericInput
@@ -381,13 +383,14 @@ export default class Agendamentos extends Component {
                   required
                 >
                   <DefaultOption label="Selecione o barbeiro" />
-                  {funcionarios.map((funcionario) => (
-                    <Option
-                      key={funcionario.id}
-                      value={funcionario.id}
-                      label={funcionario.nome}
-                    />
-                  ))}
+                  {funcionarioIterator.hasNext() ? (
+                    [...Array(funcionarioIterator.funcionarios.length)].map(() => {
+                      const funcionario = funcionarioIterator.next();
+                      return (
+                        <Option key={funcionario.id} value={funcionario.id} label={funcionario.nome}/>
+                      );
+                    })
+                  ) : null}
                 </Select>
               </InputRoot>
               {/* <GenericInput
@@ -437,13 +440,16 @@ export default class Agendamentos extends Component {
                   ) : (
                     <DefaultOption label="Selecione o horário" />
                   )}
-                  {this.state.horarios.map((horario) => (
-                    <Option
-                      key={horario.id}
-                      value={horario.id}
-                      label={horario.hora.slice(0, 5)}
-                    />
-                  ))}
+                  {horarioIterator.hasNext() ? (
+                    [...Array(horarioIterator.horarios.length)].map(() => {
+                      const horario = horarioIterator.next();
+                      return (
+                        <Option key={horario.id} value={horario.id} label={horario.hora}/>
+                      );
+                    })
+                  ) : (
+                    <DefaultOption label={'Sem horários disponíveis'}/>
+                  )}
                 </Select>
               </InputRoot>
               {/* <GenericInput
